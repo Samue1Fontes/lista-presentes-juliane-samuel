@@ -43,6 +43,10 @@ export default function GiftsInfoSection() {
             – ou <strong>presencialmente</strong> na loja Ferreira Costa
             <br/>
             <br/>
+            <strong>OBS: Para compras presenciais, basta ir até o Atendimento ao Cliente e solicitar a lista de casamento de 
+            Juliane Roberta & Samuel Fontes. A equipe da loja irá explicar e ajudar em todo o processo.</strong>
+            <br/>
+            <br/>
             <strong>Home Center Ferreira Costa</strong><br/>
             Av. Engenheiro Roberto Freire, 142 – Capim Macio<br/>
             Natal – RN
