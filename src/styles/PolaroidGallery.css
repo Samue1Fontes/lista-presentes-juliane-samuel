@@ -1,0 +1,132 @@
+.polaroid-curve {
+  display: flex;
+  justify-content: center; /* <-- Centraliza horizontalmente */
+  align-items: flex-end;
+  width: 100%;
+  gap: 6rem; /* espaçamento horizontal entre polaroids */
+  padding: 4rem 4vw;
+  overflow: visible;
+  position: relative;
+  z-index: 1;
+}
+
+/* Tamanho fixo e realista da polaroid */
+.polaroid-item {
+  width: 160px;
+  height: 200px;
+  transform-origin: center;
+  transition: transform 0.4s ease;
+  opacity: 0;
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.25));
+}
+
+/* Moldura física */
+.polaroid-frame {
+  position: relative;
+  background: #fff;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.polaroid-frame img {
+  width: 130px;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-top: 6px;
+}
+
+.polaroid-frame::after {
+  content: "";
+  display: block;
+  height: 28px;
+  width: 100%;
+}
+
+/* Curvatura simétrica e centralizada */
+.polaroid-curve.top .polaroid-item:nth-child(1) {
+  transform: translateY(80px) rotate(-18deg);
+}
+.polaroid-curve.top .polaroid-item:nth-child(2) {
+  transform: translateY(40px) rotate(-10deg);
+}
+.polaroid-curve.top .polaroid-item:nth-child(3) {
+  transform: translateY(0) rotate(-3deg);
+}
+.polaroid-curve.top .polaroid-item:nth-child(4) {
+  transform: translateY(0) rotate(5deg);
+}
+.polaroid-curve.top .polaroid-item:nth-child(5) {
+  transform: translateY(40px) rotate(12deg);
+}
+.polaroid-curve.top .polaroid-item:nth-child(6) {
+  transform: translateY(80px) rotate(18deg);
+}
+
+.polaroid-curve.bottom .polaroid-item:nth-child(1) {
+  transform: translateY(-80px) rotate(18deg);
+}
+.polaroid-curve.bottom .polaroid-item:nth-child(2) {
+  transform: translateY(-40px) rotate(10deg);
+}
+.polaroid-curve.bottom .polaroid-item:nth-child(3) {
+  transform: translateY(0) rotate(3deg);
+}
+.polaroid-curve.bottom .polaroid-item:nth-child(4) {
+  transform: translateY(0) rotate(-5deg);
+}
+.polaroid-curve.bottom .polaroid-item:nth-child(5) {
+  transform: translateY(-40px) rotate(-12deg);
+}
+.polaroid-curve.bottom .polaroid-item:nth-child(6) {
+  transform: translateY(-80px) rotate(-18deg);
+}
+
+/* Hover */
+.polaroid-item:hover {
+  transform: scale(1.08) rotate(0deg) translateY(-5px);
+  z-index: 10;
+}
+
+/* Responsivo — centraliza e quebra em pares */
+@media (max-width: 1024px) {
+  .polaroid-curve {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4rem;
+    padding: 3rem 2vw;
+  }
+}
+@media (max-width: 768px) {
+  .polaroid-curve {
+    gap: 2.5rem;
+  }
+  .polaroid-item {
+    width: 130px;
+    height: 170px;
+  }
+  .polaroid-frame img {
+    width: 110px;
+    height: 110px;
+  }
+}
+@media (max-width: 480px) {
+  .polaroid-curve {
+    gap: 1.2rem;
+  }
+  .polaroid-item {
+    width: 100px;
+    height: 130px;
+  }
+  .polaroid-frame img {
+    width: 85px;
+    height: 85px;
+  }
+}
