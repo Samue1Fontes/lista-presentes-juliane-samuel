@@ -1,13 +1,14 @@
-@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=EB+Garamond:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=EB+Garamond:wght@600;700&display=swap");
 
-/* reset básico */
+/* ---------- Reset e base ---------- */
 * { box-sizing: border-box; }
+
 html, body {
   height: 100%;
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  overflow-y: auto; /* rolagem natural do navegador */
+  overflow-y: auto; /* rolagem natural */
   background: #dfe0e1;
   font-family: "EB Garamond", serif;
   -webkit-font-smoothing: antialiased;
@@ -21,11 +22,40 @@ html, body {
   min-height: 100%;
 }
 
-/* panel base */
+/* ===== Scrollbar cinematográfica ===== */
+
+/* Firefox */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #3e541154 #3e541120; /* thumb | track */
+}
+
+/* WebKit (Chrome, Edge, Safari) */
+html::-webkit-scrollbar {
+  width: 10px;
+}
+
+html::-webkit-scrollbar-track {
+  background: #3e541120; /* fundo translúcido */
+}
+
+html::-webkit-scrollbar-thumb {
+  background: #3e541154;
+  border-radius: 999px;
+  border: 3px solid #3e541120; /* integra com o track */
+  background-clip: content-box;
+  transition: background 0.3s ease;
+}
+
+html::-webkit-scrollbar-thumb:hover {
+  background: #3e541180;
+}
+
+/* ---------- Painéis e Seções ---------- */
 .panel {
   position: relative;
   width: 100%;
-  min-height: 100vh; /* ocupa a tela */
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -33,7 +63,6 @@ html, body {
   overflow: hidden;
 }
 
-/* overlay for image backgrounds */
 .section-overlay {
   position: absolute;
   inset: 0;
@@ -41,7 +70,6 @@ html, body {
   pointer-events: none;
 }
 
-/* inner content */
 .section-inner {
   position: relative;
   z-index: 2;
@@ -49,20 +77,39 @@ html, body {
   width: 100%;
 }
 
-/* hero specifics */
+/* ---------- Hero Section ---------- */
 .hero-section {
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
 }
+
 .hero-content {
   color: #fff;
   text-align: center;
+  animation: fadeIn 1.4s ease-out both;
 }
-.subtitle { font-size: 1rem; letter-spacing: .16em; margin-bottom: .5rem; opacity: .95; }
-.hero-title { font-family: "Playfair Display", serif; font-size: 3.2rem; margin: 0.3rem 0; }
-.hero-date { font-size: 1.1rem; letter-spacing: .28em; opacity: .95; }
 
-/* split layout for sections */
+.subtitle {
+  font-size: 1rem;
+  letter-spacing: .16em;
+  margin-bottom: .5rem;
+  opacity: .95;
+}
+
+.hero-title {
+  font-family: "Playfair Display", serif;
+  font-size: 3.2rem;
+  margin: 0.3rem 0;
+}
+
+.hero-date {
+  font-size: 1.1rem;
+  letter-spacing: .28em;
+  opacity: .95;
+}
+
+/* ---------- Layout dividido ---------- */
 .split {
   display: grid;
   grid-template-columns: 1fr;
@@ -70,16 +117,22 @@ html, body {
   align-items: center;
   width: 100%;
 }
+
 .split.reverse { grid-auto-flow: dense; }
-@media(min-width: 768px) {
+
+@media (min-width: 768px) {
   .split { grid-template-columns: 48% 52%; }
   .split.reverse { grid-template-columns: 52% 48%; }
 }
 
-.split-media { display:flex; align-items:center; justify-content:center; }
+.split-media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .split-text { padding: 0 1rem; }
 
-/* contained images */
 .contained-image {
   width: 100%;
   max-width: 520px;
@@ -88,20 +141,37 @@ html, body {
   box-shadow: 0 12px 30px rgba(0,0,0,0.12);
 }
 
-/* map placeholder */
-.map-placeholder {
-  width: 100%;
-  height: 12rem;
-  background: #eee;
-  border-radius: 12px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  color:#666;
-  font-style: italic;
+.event-link {
+  text-decoration: none;
+  color: inherit; /* mantém cor do texto normal */
+  font-weight: 600;
+  transition: color 0.3s ease;
 }
 
-/* buttons */
+.event-link:hover {
+  color: #AA552C; /* muda cor apenas no hover */
+}
+
+/* Links */
+a,
+.event-link,
+.social-link span,
+.footer-nav a,
+.footer-title,
+.credit a {
+  text-decoration: none;
+}
+
+a:hover,
+.event-link:hover,
+.social-link:hover span,
+.footer-nav a:hover,
+.footer-title:hover,
+.credit a:hover {
+  text-decoration: underline;
+}
+
+/* ---------- Botões ---------- */
 .btn-primary {
   background: #AA552C;
   color: white;
@@ -110,31 +180,100 @@ html, body {
   border-radius: 999px;
   cursor: pointer;
   font-family: "EB Garamond", serif;
+  font-size: 1.30rem;
+  transition: all 0.3s ease;
 }
 
-/* minimal color variants */
+.btn-primary:hover {
+  background: #8f3f1e;
+  transform: translateY(-2px);
+}
+
+/* ---------- Paletas minimalistas ---------- */
 .section-light { background: #f7f3ee; color: #222; }
 .section-beige { background: #fff8f5; color: #222; }
 
-/* reveal animations (IntersectionObserver) */
-.reveal { opacity: 0; transform: translateY(30px); transition: opacity .9s ease, transform .9s ease; }
-.reveal.in-view { opacity: 1; transform: translateY(0); }
+/* ---------- Animações de revelação ---------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity .9s ease, transform .9s ease;
+}
 
-/* directional helpers */
+.reveal.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .fade-left { transform: translateX(-40px); }
 .fade-right { transform: translateX(40px); }
 .fade-left.in-view, .fade-right.in-view { transform: translateX(0); }
 
-/* footer */
+/* ---------- Footer ---------- */
 .site-footer {
   padding: 3rem 1rem;
   text-align: center;
-  background: #7A774C;
+  background: linear-gradient(180deg, #6e6a52 0%, #7A774C 100%);
   color: white;
 }
 
-/* responsive typographic tweaks */
-@media(min-width: 768px) {
-  .hero-title { font-size: 4.4rem; }
+.footer-inner .footer-title {
+  font-size: 1.2rem;
+  margin-bottom: 4px;
+}
+
+.footer-inner .muted {
+  color: rgba(255,255,255,0.8);
+}
+
+.footer-link {
+  color: rgba(255,255,255,0.95);
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.footer-link:hover {
+  text-decoration: underline;
+  opacity: 0.85;
+}
+
+/* ---------- Tipografia e legibilidade ---------- */
+:root {
+  --base-font-size: 18px;
+  --heading-scale: 1.18;
+}
+
+body {
+  font-size: var(--base-font-size);
+  line-height: 1.6;
+  color: #2f2f2f;
+}
+
+h1, .hero-title {
+  font-size: 2.8rem;
+  line-height: 1.1;
+}
+
+h2, h3 {
+  font-size: 1.7rem;
+  font-family: "Playfair Display", serif;
+  color: #AA552C;
+}
+
+/* ---------- Efeito FadeIn ---------- */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------- Responsividade ---------- */
+@media (min-width: 768px) {
+  .hero-title { font-size: 4rem; }
   .subtitle, .hero-date { font-size: 1.2rem; }
+}
+
+@media (max-width: 768px) {
+  .polaroid-wrap { width: 86px; height: 104px; }
+  body { font-size: 16px; }
 }

@@ -1,0 +1,260 @@
+.site-footer {
+  background: linear-gradient(180deg, #8a4b2a 0%, #4b2c1a 100%);
+  color: #fff;
+  padding: 3rem 1rem;
+  font-family: "EB Garamond", serif;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.footer-social {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.6rem;
+}
+
+.social-redes {
+  margin-top: 0;
+  margin-bottom: 0.2rem;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: rgba(255, 255, 255, 0.92);
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.social-link:hover {
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.footer-center {
+  text-align: center;
+}
+
+.footer-title {
+  font-family: "Playfair Display", serif;
+  font-size: 1.6rem;
+  margin-bottom: 4px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.footer-title:hover {
+  transform: scale(1.05);
+}
+
+.footer-date {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  opacity: 0.9;
+}
+
+.footer-nav {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.footer-nav a {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.footer-nav a:hover {
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.footer-top {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+  margin-left: auto;
+}
+
+.arrow-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  align-self: center;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.footer-top:hover .arrow-container,
+.arrow-container.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.arrow-up {
+  font-size: 1.6rem;
+  color: #fff;
+  opacity: 0.9;
+}
+
+.arrow-container.visible .arrow-up.first {
+  animation: arrowBounce 1s infinite 0.1s;
+}
+
+.arrow-container.visible .arrow-up.second {
+  animation: arrowBounce 1s infinite 0.3s;
+}
+
+@keyframes arrowBounce {
+  0%, 100% {
+    transform: translateY(0);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translateY(-6px);
+    opacity: 1;
+  }
+}
+
+.btn-top {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  border-radius: 999px;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 130px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Efeito de brilho no hover */
+.btn-top::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.btn-top:hover::before {
+  left: 100%;
+}
+
+.btn-top:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.btn-top:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.copyright {
+  margin-top: 0.8rem;
+  font-size: 1rem;
+  opacity: 0.85;
+}
+
+.credit {
+  margin-top: 0.2rem;
+  font-size: 0.95rem;
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+}
+
+.credit:hover {
+  opacity: 1;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 1.5rem;
+  }
+
+  .footer-social {
+    align-items: center;
+  }
+
+  .footer-top {
+    align-items: center;
+    margin-left: 0;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+
+  .arrow-container {
+    align-self: center;
+  }
+
+  .footer-title {
+    font-size: 1.4rem;
+  }
+
+  .footer-date {
+    font-size: 1.1rem;
+  }
+
+  .footer-nav {
+    flex-wrap: wrap;
+    gap: 0.8rem;
+  }
+
+  .site-footer {
+    padding: 2rem 1rem;
+  }
+}
+
+/* Melhorias para telas muito pequenas */
+@media (max-width: 480px) {
+  .footer-nav {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .footer-nav a {
+    padding: 0.3rem 0;
+  }
+
+  .btn-top {
+    min-width: 120px;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .arrow-up {
+    font-size: 1.4rem;
+  }
+}
