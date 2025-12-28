@@ -1,15 +1,18 @@
 import React from "react";
 import SectionContainer from "./SectionContainer";
 
+const IMG_1125_AVIF = new URL("../assets/optimized/IMG_1125.avif", import.meta.url).href;
+const IMG_1125_WEBP = new URL("../assets/optimized/IMG_1125.webp", import.meta.url).href;
+
 export default function WelcomeSection() {
   return (
     <SectionContainer id="welcome" bg={null} className="section-light">
       <div className="split">
         <div className="split-media reveal fade-left">
           <picture>
-            <source srcSet="/src/assets/optimized/IMG_1125.avif" type="image/avif" />
-            <source srcSet="/src/assets/optimized/IMG_1125.webp" type="image/webp" />
-            <img src="/src/assets/optimized/IMG_1125.webp" alt="Boas-vindas" className="contained-image" loading="lazy" />
+            <source srcSet={IMG_1125_AVIF} type="image/avif" />
+            <source srcSet={IMG_1125_WEBP} type="image/webp" />
+            <img src={IMG_1125_WEBP} alt="Boas-vindas" className="contained-image" loading="lazy" />
           </picture>
         </div>
         <div className="split-text reveal fade-up">

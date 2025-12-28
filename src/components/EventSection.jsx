@@ -39,9 +39,9 @@ export default function EventSection() {
         </div>
         <div className="split-media reveal fade-right">
           <picture>
-            <source srcSet="/src/assets/optimized/IMG_1035.avif" type="image/avif" />
-            <source srcSet="/src/assets/optimized/IMG_1035.webp" type="image/webp" />
-            <img src="/src/assets/optimized/IMG_1035.webp" alt="Local" className="contained-image" loading="lazy" />
+            <source srcSet={new URL('../assets/optimized/IMG_1035.avif', import.meta.url).href} type="image/avif" />
+            <source srcSet={new URL('../assets/optimized/IMG_1035.webp', import.meta.url).href} type="image/webp" />
+            <img src={new URL('../assets/optimized/IMG_1035.webp', import.meta.url).href} alt="Local" className="contained-image" loading="lazy" />
           </picture>
         </div>
       </div>
