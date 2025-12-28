@@ -5,6 +5,9 @@ import SaveCalendar from "./SaveCalendar.jsx";
 import { FaMapMarkerAlt, FaCalendarAlt, FaClock, } from "react-icons/fa";
 import { GiFlowerPot } from 'react-icons/gi';
 
+import IMG_1035_AVIF from "../assets/optimized/IMG_1035.avif";
+import IMG_1035_WEBP from "../assets/optimized/IMG_1035.webp";
+
 export default function EventSection() {
   return (
     <SectionContainer id="event" bg={null} className="section-beige">
@@ -39,9 +42,9 @@ export default function EventSection() {
         </div>
         <div className="split-media reveal fade-right">
           <picture>
-            <source srcSet={new URL('../assets/optimized/IMG_1035.avif', import.meta.url).href} type="image/avif" />
-            <source srcSet={new URL('../assets/optimized/IMG_1035.webp', import.meta.url).href} type="image/webp" />
-            <img src={new URL('../assets/optimized/IMG_1035.webp', import.meta.url).href} alt="Local" className="contained-image" loading="lazy" />
+            <source srcSet={IMG_1035_AVIF} type="image/avif" />
+            <source srcSet={IMG_1035_WEBP} type="image/webp" />
+            <img src={IMG_1035_WEBP} alt="Local" className="contained-image" loading="lazy" />
           </picture>
         </div>
       </div>

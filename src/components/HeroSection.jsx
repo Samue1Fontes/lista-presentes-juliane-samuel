@@ -1,13 +1,11 @@
 import React from "react";
 import SectionContainer from "./SectionContainer";
 
-const IMG_0669_AVIF = new URL("../assets/optimized/IMG_0669_up.avif", import.meta.url).href;
-const IMG_0669_WEBP = new URL("../assets/optimized/IMG_0669_up.webp", import.meta.url).href;
-const IMG_0669_PNG = new URL("../assets/raw_assets/IMG_0669_up.png", import.meta.url).href;
+import IMG_0669_AVIF from "../assets/optimized/IMG_0669_up.avif";
+import IMG_0669_WEBP from "../assets/optimized/IMG_0669_up.webp";
 
 export default function HeroSection() {
-
-  const bg = `image-set(url('${IMG_0669_AVIF}') type('image/avif'), url('${IMG_0669_WEBP}') type('image/webp'), url('${IMG_0669_PNG}') type('image/png'))`;
+  const bg = `image-set(url('${IMG_0669_AVIF}') type('image/avif'), url('${IMG_0669_WEBP}') type('image/webp'))`;
 
   return (
     <SectionContainer id="hero" bg={null} className="hero-section" style={{ backgroundImage: bg }}>

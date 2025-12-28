@@ -1,8 +1,8 @@
 import React from "react";
 import SectionContainer from "./SectionContainer";
 
-const IMG_1125_AVIF = new URL("../assets/optimized/IMG_1125.avif", import.meta.url).href;
-const IMG_1125_WEBP = new URL("../assets/optimized/IMG_1125.webp", import.meta.url).href;
+import IMG_1125_AVIF from "../assets/optimized/IMG_1125.avif";
+import IMG_1125_WEBP from "../assets/optimized/IMG_1125.webp";
 
 export default function WelcomeSection() {
   return (
