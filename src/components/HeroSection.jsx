@@ -3,13 +3,12 @@ import SectionContainer from "./SectionContainer";
 
 import IMG_0669_AVIF from "../assets/optimized/IMG_0669_up.avif";
 import IMG_0669_WEBP from "../assets/optimized/IMG_0669_up.webp";
-import IMG_0669_JPG from "../assets/polaroids/IMG_0669.jpg";
+import IMG_0669_PNG from "../assets/polaroids/IMG_0669_up.png";
 
 export default function HeroSection() {
 
-
   return (
-    <SectionContainer id="hero" bg={IMG_0669_JPG} className="hero-section">
+    <SectionContainer id="hero" bg={IMG_0669_PNG} className="hero-section">
       <div className="hero-content">
         <p className="subtitle">Vamos celebrar juntos</p>
         <h1 className="hero-title">Juliane &amp; Samuel</h1>
