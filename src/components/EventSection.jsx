@@ -3,7 +3,7 @@ import SectionContainer from "./SectionContainer";
 import EventMap from "./EventMap.jsx";
 import SaveCalendar from "./SaveCalendar.jsx";
 import { FaMapMarkerAlt, FaCalendarAlt, FaClock, } from "react-icons/fa";
-import { GiFlowerPot } from 'react-icons/gi';
+import { GiSparkles } from 'react-icons/gi';
 
 import IMG_1035_AVIF from "../assets/optimized/IMG_1035.avif";
 import IMG_1035_WEBP from "../assets/optimized/IMG_1035.webp";
@@ -17,17 +17,17 @@ export default function EventSection() {
           <p>
             Esse dia especial será no&nbsp;
             <a
-              href="https://www.instagram.com/florefloroficial"
+              href="https://www.instagram.com/realizerecepcoesnl/"
               target="_blank"
               rel="noopener noreferrer"
               className="event-link"
             >
-              Flor & Flor. <GiFlowerPot style={{ fontSize: "2rem", color: "#AA552C" }}/>
+              Realize Recepções. <GiSparkles style={{ fontSize: "1.5rem", color: "#AA552C" }}/>
             </a>
           </p>
           <p>
             <FaMapMarkerAlt style={{ fontSize: "1rem", marginRight: "0.4rem", color: "#AA552C" }}/>
-            Rua Humberto Monte, 1855, Capim Macio, Natal - RN.
+            Rua Rainha do Mar, 440A - Felipe Camarão, Natal - RN.
           </p>
           <p>
             <FaCalendarAlt style={{ fontSize: "1rem", marginRight: "0.4rem", color: "#AA552C" }}/>
