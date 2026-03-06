@@ -17,17 +17,17 @@ export default function EventSection() {
           <p>
             Esse dia especial será no&nbsp;
             <a
-              href="https://www.instagram.com/realizerecepcoesnl/"
+              href="https://www.instagram.com/happyfest.of/"
               target="_blank"
               rel="noopener noreferrer"
               className="event-link"
             >
-              Realize Recepções. <GiSparkles style={{ fontSize: "1.5rem", color: "#AA552C" }}/>
+              Happy Fest. <GiSparkles style={{ fontSize: "1.5rem", color: "#AA552C" }}/>
             </a>
           </p>
           <p>
             <FaMapMarkerAlt style={{ fontSize: "1rem", marginRight: "0.4rem", color: "#AA552C" }}/>
-            Rua Rainha do Mar, 440A - Felipe Camarão, Natal - RN.
+            R. Prof. Antônio Trigueiro, 48 - Felipe Camarão, Natal - RN, 59074-100
           </p>
           <p>
             <FaCalendarAlt style={{ fontSize: "1rem", marginRight: "0.4rem", color: "#AA552C" }}/>

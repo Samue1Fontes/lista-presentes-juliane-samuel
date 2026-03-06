@@ -3,7 +3,7 @@ import { FaCalendarAlt } from 'react-icons/fa';
 export default function GoogleCalendarButton() {
   return (
     <a
-      href="https://www.google.com/calendar/render?action=TEMPLATE&text=Nosso+Ch%C3%A1+-+Juliane+%26+Samuel&dates=20260307T160000/20260307T200000&details=Venha+celebrar+conosco+no+Realize+Recep%C3%A7%C3%B5es&location=Realize+Recep%C3%A7%C3%B5es+-+R.+Rainha+do+Mar,+440A+-+Felipe+Camar%C3%A3o,+Natal+-+RN,+59074-150&color=8&trp=false"
+      href="https://www.google.com/calendar/render?action=TEMPLATE&text=Nosso+Ch%C3%A1+-+Juliane+%26+Samuel&dates=20260307T160000/20260307T200000&details=Venha+celebrar+conosco+no+Happy+Fest&location=Happy+Fest+-+R.+Prof.+Ant%C3%B4nio+Trigueiro,+48+-+Felipe+Camar%C3%A3o,+Natal+-+RN,+59074-100&color=8&trp=false"
       target="_blank"
       rel="noopener noreferrer"
       className="btn-primary"
